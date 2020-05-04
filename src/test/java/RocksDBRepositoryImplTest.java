@@ -67,10 +67,10 @@ public class RocksDBRepositoryImplTest {
     Assert.assertNull(rocksDBRepository.find("Key1"));
   }
 
-  // ********************* MultiThreading tests *******************************
+  // ********************* Multithreading tests *******************************
 
   @Test
-  public void testConcurrentMultiThreadSave() throws InterruptedException {
+  public void testConcurrentMultithreadedSave() throws InterruptedException {
     List<Runnable> runnables =
         Stream.generate(
                 () ->
@@ -98,7 +98,7 @@ public class RocksDBRepositoryImplTest {
   }
 
   @Test
-  public void testConcurrentMultiThreadDelete() throws InterruptedException {
+  public void testConcurrentMultithreadedDelete() throws InterruptedException {
 
     List<Runnable> runnables =
         Stream.generate(
